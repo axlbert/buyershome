@@ -91,14 +91,17 @@ var ViewModel = function() {
     self.currentCategory = ko.observable();
     self.showCategoryPage = ko.observable();
     self.showStartpage2 = ko.observable();
-    self.filterList = ko.observableArray([]);  
-    self.categoryList = ko.observableArray(["Valves","SPS","Motors","Pumps","Subcontracted","Field Assembly","Sensors","Pneumatics","eCabinets"]);
+    self.filterList = ko.observableArray([]); 
+	self.basket_count = ko.observable(0);
+	self.basket_item = ko.observable("x Solenoid");
+    self.categoryList = ko.observableArray(["Valves","Motors","Pumps","Sensors","Pneumatics","Metal","Wood","Logistics","Packaging","Electronics"]);
 
 
     self.init_page = function(){
       self.showStartpage(true);
       self.showCategoryPage(false);
       self.showStartpage2(false);
+	  self.input('');
     };
 
     self.init_page();
@@ -110,6 +113,16 @@ var ViewModel = function() {
         
       });
     };
+	self.increment_basket = function() {
+		self.basket_count(self.basket_count()+1);
+		self.basket_sfx();
+	};
+	
+	self.basket_sfx = function(){
+		
+		$("#basket" ).css( "font-size", "20px" );
+		setTimeout(function(){$("#basket" ).css( "font-size", "14px" );},100);
+	};
 
     /** triggering the above mentioned*/
     self.buildFilterList();

@@ -1,73 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
 
-  <title>Dashboard Template for Bootstrap</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Bootstrap core CSS -->
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Procurement Portal</title>
 
 
-  <!-- Custom styles for this template -->
-  <link href="dashboard.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/agency.css" rel="stylesheet">
+
+
 
 </head>
 
-<body>
+<body id="page-top" class="index">
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" data-bind="click: init_page"><img class="logo_navbar" src="logo_l.png"></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Basket</a></li>
-          <li><a href="#">Language</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-        <form class="navbar-form navbar-right">
-          <input type="text" class="form-control" data-bind="textInput: input, event: {keyup: filterFunc}" placeholder="Enter article">
-        </form>
-      </div>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" data-bind="click: init_page">Procurement Portal</a>
+            </div>
 
-  <div class="container-fluid">
+           
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                       <a class="page-scroll" href="#" data-toggle="modal" data-target="#BasketModal"> <span id="basket" data-bind="text: basket_count"></span></span><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Basket</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Profile</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Help</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" class="bg-light-gray">
+            <div class="intro-text">
+                <div class="intro-lead-in">Procurement Portal</div>
+                <div class="intro-heading">Sourcing Solved</div>
+                <!--<a href="#services" class="page-scroll btn btn-xl">Browse Catalogue</a>-->
+				<input type="text" class="form-control" id="main-search" data-bind="textInput: input, event: {keyup: filterFunc}" placeholder="Enter article">
+            </div>
+        </div>
+    </header>
+
+
+
+	
+	<section id="categories">
+		<div class="container>
+		
+		<div class="container-fluid">
     <div class="row">
             
       <div class="col-sm-12 col-md-12">
-        <h3 class="page-header" data-bind="visible: showCategoryPage, text: currentCategory"></h3>
-
-
-
+        
         <div class="row placeholders" >
-        <div class="container-fluid">
-          <div class="row" data-bind="visible: showStartpage2()">
+
+        <div class="container">
+          <div class="row" data-bind="visible: showStartpage2()" style="padding-top: 100px">
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail" id="recommendation">
                 <img src="valve.png" alt="...">
                 <div class="caption">
                   <h3>Best Price</h3>
                   <p>Solenoid Budget</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Add</a> <a href="#" class="btn btn-default" role="button">Drop</a></p>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100% match
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+							</button>
+						</div>
+					</div>
+					<br>
+				  
+                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
                 </div>
               </div>
             </div>
@@ -77,7 +127,26 @@
                 <div class="caption">
                   <h3>Your Choice</h3>
                   <p>Solenoid - 2</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Add</a> <a href="#" class="btn btn-default" role="button">Drop</a></p>
+					<div class="no-progress-bar"></div>
+											<div class="row">
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+							</button>
+						</div>
+					</div>
+					<br>
+                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
                 </div>
               </div>
             </div>
@@ -88,9 +157,33 @@
                 <div class="caption">
                   <h3>High Runner</h3>
                   <p>Solenoid Mega</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Add</a> <a href="#" class="btn btn-default" role="button">Drop</a></p>
+				  		<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">85% match
+						</div>
+						</div>
+						<div class="row">
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+							</button>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+							</button>
+						</div>
+					
+					
+					</div>
+					<br>
+                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
                 </div>
-              </div>
+             
             </div>
           </div>
 
@@ -98,95 +191,58 @@
 
 
           </div>
-                    <div id="carousel-example-generic" class="carousel slide" data-bind="visible: showStartpage" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
+                            
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="backgrnd1.png" alt="...">
-                <div class="carousel-caption">
-                  <h2>Instant Best Price Search</h2>
-                  <span> Find the best price matching your search</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="backgrnd2.png" alt="...">
-                <div class="carousel-caption">
-                  <h2>Electronics now Available</h2>
-                  <span> Category entries will be added continuously</span>
-                </div>
-              </div>
-              
-              <div class="item">
-                <img src="backgrnd3.png" alt="...">
-                <div class="carousel-caption">
-                  <h2>On Site Construction Helpers</h2>
-                  <p><a class="btn btn-primary btn-lg" href="sizing.html" role="button">Calculate Now</a></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+            
 
 
 
           <div class="container-fluid" data-bind="visible: showStartpage">
-
+			
           <br>
           <br>
           <div class="row">
-            <div class="col-sm-6 col-md-4">
-              <div class="jumbotron">
-                <h2>Get a quote</h2>
-                <p>Now available for Field Assemblies</p>
-                <p><a class="btn btn-primary btn-lg" href="sizing.html" role="button">Calculate Now</a></p>
-              </div>
+			            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Categories </h2>
+                    <h3 class="section-subheading text-muted">constantly expanding</h3>
+                </div>
             </div>
               
-            <div class="col-sm-6 col-md-4">
-              <div class="jumbotron">
-                <h2>Tender pooling</h2>
-                <p>add your products to tender packages in order to obtain project discounts</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-              </div>
-            </div>
-          
-          <div class="col-sm-6 col-md-4">
-          <div class="jumbotron">
-            <h2>Categories</h2>
 
-        <ul class="nav nav-sidebar" data-bind="template: {name:'list', foreach: categoryList  }"></ul>
+          
+
+         
+
+        <div data-bind="template: {name:'list', foreach: categoryList  }"></div>
         <!--adding a $parent keeps the code from breaking-->
         <script type="text/html" id="list">
-          <li class="list-group-item" data-bind="text: $data , click: $parent.showCategory"></li>
+           <div class="card" data-bind="click: $parent.showCategory">
+			  <img  class="card-img" src="valve.png" alt="Avatar" style="width:100%">
+			  <div class="container-card">
+				<h4><b data-bind="text: $data , click: $parent.showCategory"></b></h4> 
+				<p>lorem ipsum</p> 
+			  </div>
+			</div>
+		  
+		  
+		  
+		  
         </script>
           </div>
           </div>
-          </div>
-          </div>
+       
 
 
         </div>
 
   <div class="table-responsive" data-bind="visible: showCategoryPage">
     <div class="container-fluid">
+	<div class="row"><h3 style="padding-left: 20px">Your Search Results</h3></div>
+	<br>
     <table class="table">
     <thead>
+	<td></td>
       <td></td>
       <td>Article</td>
       <td>Cost</td>
@@ -199,7 +255,9 @@
           <script type="text/html" id="list2">
             
               <tr>
+				<td></td>
                 <td><img src="valve2.png"></td>
+				
                 <td data-bind="text: name, click: $parent.showBestPrice"></td>
                 <td data-bind=" click: $parent.showBestPrice">24€</td>
                 <td data-bind=" click: $parent.showBestPrice">1</td>
@@ -209,24 +267,267 @@
               <hr>
            </script>
     </div>
+		
+		</div>
+	
+	
+	</section>
+	
+	
+	<section id="applications" class="section2 bg-light-gray">
+		<div class="container">
+			<div class="row">
+				    <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Applications </h2>
+                    <h3 class="section-subheading text-muted">Which component fits your application best?</h3>
+                </div>
+			
+			</div>
+		</div>
+	</section>
+	
+	    <!-- Services Section -->
+    <section id="services" class=" section2 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services </h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
 
+                        <img class="resize_button" src="rent.png">
+                       
+                    </span>
+                    <h4 class="service-heading" id="rentMach">Full Catalogues</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <img class="resize_button" src="buy.png">
+                    </span>
+                    <h4 class="service-heading" id="buyUsed">Best Price Search</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
 
-  </div>
+                        <img class="resize_button" src="sell.png">
+                    </span>
+                    <h4 class="service-heading" id="sellUsed">Current Pricelists</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
+    <!-- Contact Section -->
+    <section id="contact" class="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Request Help</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Senden</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Procurement Portal</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+	<div class="modal fade" id="CADModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">CAD and Drawings</h4>
+      </div>
+      <div class="modal-body">
+        		<div class="row">
+			<div class="col-md-6">
+				<img class="img2" src="content.png">
+			</div>
+			<div class="col-md-6">
+				<p>lorem ipsum <b>bacon</b></p>
+				<p>spec speck spec</p>
+				<p>spec spec spec</p>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="
-sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <script src="script.js"></script>
+	<div class="modal fade" id="MANModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Specifications</h4>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-md-6">
+				<img class="img2" src="content.png">
+			</div>
+			<div class="col-md-6">
+				<p>lorem ipsum <b>bacon</b></p>
+				<p>spec speck spec</p>
+				<p>spec spec spec</p>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	<div class="modal fade" id="CNTModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Pricing and Contract</h4>
+      </div>
+      <div class="modal-body">
+        		<div class="row">
+			<div class="col-md-6">
+				<img class="img2" src="content.png">
+			</div>
+			<div class="col-md-6">
+				<p>lorem ipsum <b>bacon</b></p>
+				<p>spec speck spec</p>
+				<p>spec spec spec</p>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+		<div class="modal fade" id="BasketModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content special" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Basket</h4>
+      </div>
+      <div class="modal-body">
+		<span data-bind="text: basket_count"></span><span data-bind="text: basket_item"></span>
+      </div>
+      <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">To ERP</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+	<!-- Modal -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+
+
+
+  
+  
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+	<script src="script.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
 
 </body>
 
