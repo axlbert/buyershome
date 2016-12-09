@@ -77,198 +77,213 @@
 
 	
 	<section id="categories">
-		<div class="container>
+	
 		
-		<div class="container-fluid">
-    <div class="row">
-            
-      <div class="col-sm-12 col-md-12">
-        
-        <div class="row placeholders" >
+			<div class="row">
+					<div class="col-md-2" >
+						<div class="list-group" id="catSuppliers">
+							<div class="list-group-item" data-bind="click: init_page">Back</div>
+							<br>
+							  <strong><a href="#" class="list-group-item disabled" data-bind="text: currentCategory"></a></strong>
+								<div data-bind="template: {name:'list3', foreach: supplierName  }"></div>
+									<script type="text/html" id="list3">
+										<a href="#" class="list-group-item" data-bind="text: $data "></a>
+									</script>
+								
+							  
+							  
+							  
 
-        <div class="container">
-          <div class="row" data-bind="visible: showStartpage2()" style="padding-top: 100px">
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail" id="recommendation">
-                <img src="valve.png" alt="...">
-                <div class="caption">
-                  <h3>Best Price</h3>
-                  <p>Solenoid Budget</p>
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100% match
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
-								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
-								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
-								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
-							</button>
-						</div>
-					</div>
-					<br>
-				  
-                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <img src="valve.png" alt="...">
-                <div class="caption">
-                  <h3>Your Choice</h3>
-                  <p>Solenoid - 2</p>
-					<div class="no-progress-bar"></div>
-											<div class="row">
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
-								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
-								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
-								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
-							</button>
-						</div>
-					</div>
-					<br>
-                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <img src="valve.png" alt="...">
-                <div class="caption">
-                  <h3>High Runner</h3>
-                  <p>Solenoid Mega</p>
-				  		<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">85% match
-						</div>
-						</div>
-						<div class="row">
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
-								<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
-								<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
-							</button>
-						</div>
-						<div class="col-xs-4">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
-								<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
-							</button>
 						</div>
 					
-					
 					</div>
-					<br>
-                  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
-                </div>
-             
-            </div>
-          </div>
+					<div class="col-md-10">
+						<div class="container-fluid">
+									<div class="row">
+											
+									  <div class="col-sm-12 col-md-12">
+										
+										<div class="row placeholders" >
+
+										<div class="container">
+										  <div class="row" data-bind="visible: showStartpage2()" style="padding-top: 100px">
+											<div class="col-sm-6 col-md-4">
+											  <div class="thumbnail" id="recommendation">
+												<img src="valve.png" alt="...">
+												<div class="caption">
+												  <h3>Best Price</h3>
+												  <p>Solenoid Budget</p>
+													<div class="progress">
+														<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100% match
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+																<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+																<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+																<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+															</button>
+														</div>
+													</div>
+													<br>
+												  
+												  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
+												</div>
+											  </div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+											  <div class="thumbnail">
+												<img src="valve.png" alt="...">
+												<div class="caption">
+												  <h3>Your Choice</h3>
+												  <p>Solenoid - 2</p>
+													<div class="no-progress-bar"></div>
+																			<div class="row">
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+																<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+																<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+																<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+															</button>
+														</div>
+													</div>
+													<br>
+												  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
+												</div>
+											  </div>
+											</div>
+
+											<div class="col-sm-6 col-md-4">
+											  <div class="thumbnail">
+												<img src="valve.png" alt="...">
+												<div class="caption">
+												  <h3>High Runner</h3>
+												  <p>Solenoid Mega</p>
+														<div class="progress">
+														<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">85% match
+														</div>
+														</div>
+														<div class="row">
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CADModal">
+																<span class="glyphicon glyphicon-th" aria-hidden="true"></span> CAD
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#MANModal">
+																<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Manual
+															</button>
+														</div>
+														<div class="col-xs-4">
+															<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#CNTModal">
+																<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Contract
+															</button>
+														</div>
+													
+													
+													</div>
+													<br>
+												  <p><a href="#" class="btn btn-primary" role="button" data-bind="click: increment_basket">Add</a> <a href="#" class="btn btn-default" role="button" data-bind="click: init_page">Drop</a></p>
+												</div>
+											 
+											</div>
+										  </div>
 
 
 
 
-          </div>
-                            
+										  </div>
+															
 
-            
-
-
-
-          <div class="container-fluid" data-bind="visible: showStartpage">
-			
-          <br>
-          <br>
-          <div class="row">
-			            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Categories </h2>
-                    <h3 class="section-subheading text-muted">constantly expanding</h3>
-                </div>
-            </div>
-              
-
-          
-
-         
-
-        <div data-bind="template: {name:'list', foreach: categoryList  }"></div>
-        <!--adding a $parent keeps the code from breaking-->
-        <script type="text/html" id="list">
-           <div class="card" data-bind="click: $parent.showCategory">
-			  <img  class="card-img" src="valve.png" alt="Avatar" style="width:100%">
-			  <div class="container-card">
-				<h4><b data-bind="text: $data , click: $parent.showCategory"></b></h4> 
-				<p>lorem ipsum</p> 
-			  </div>
-			</div>
-		  
-		  
-		  
-		  
-        </script>
-          </div>
-          </div>
-       
+											
 
 
-        </div>
 
-  <div class="table-responsive" data-bind="visible: showCategoryPage">
-    <div class="container-fluid">
-	<div class="row"><h3 style="padding-left: 20px">Your Search Results</h3></div>
-	<br>
-    <table class="table">
-    <thead>
-	<td></td>
-      <td></td>
-      <td>Article</td>
-      <td>Cost</td>
-      <td>Unit</td>
-      <td>Spec</td>
-      <td></td>
-    </thead>
-    <tbody class= "table table-striped" data-bind="template: {name:'list2', foreach: filterList  }"></tbody></table>
-            
-          <script type="text/html" id="list2">
-            
-              <tr>
-				<td></td>
-                <td><img src="valve2.png"></td>
-				
-                <td data-bind="text: name, click: $parent.showBestPrice"></td>
-                <td data-bind=" click: $parent.showBestPrice">24€</td>
-                <td data-bind=" click: $parent.showBestPrice">1</td>
-                <td data-bind=" click: $parent.showBestPrice">spec</td>
-                <td><a data-bind="click: $parent.showBestPrice" class="btn btn-primary" role="button">Add</a> </td>
-              </tr>
-              <hr>
-           </script>
-    </div>
-		
-		</div>
+										  <div class="container-fluid" data-bind="visible: showStartpage">
+
+										  <br>
+										  <br>
+										  <div class="row">
+														<div class="row">
+												<div class="col-lg-12 text-center">
+													<h2 class="section-heading">Categories </h2>
+													<h3 class="section-subheading text-muted">constantly expanding</h3>
+												</div>
+											</div>
+											  
+
+										  
+
+										 
+
+										<div data-bind="template: {name:'list', foreach: categoryList  }"></div>
+										<!--adding a $parent keeps the code from breaking-->
+										<script type="text/html" id="list">
+										   <div class="card" data-bind="click: $parent.showCategory">
+											  <img  class="card-img" src="valve.png" alt="Avatar" style="width:100%">
+											  <div class="container-card">
+												<h4><b data-bind="text: $data , click: $parent.showCategory"></b></h4> 
+												<p>lorem ipsum</p> 
+											  </div>
+											</div>	  
+										</script>
+										  </div>
+										  </div>
+									   
+
+
+										</div>
+
+								  <div class="table-responsive" data-bind="visible: showCategoryPage">
+									<div class="container-fluid">
+									<div class="row"><h3 style="padding-left: 20px">Your Search Results</h3></div>
+									<br>
+									<table class="table">
+									<thead>
+									<td></td>
+									  <td></td>
+									  <td>Article</td>
+									  <td>Cost</td>
+									  <td>Unit</td>
+									  <td>Spec</td>
+									  <td></td>
+									</thead>
+									<tbody class= "table table-striped" data-bind="template: {name:'list2', foreach: filterList  }"></tbody></table>
+											
+										  <script type="text/html" id="list2">
+											
+											  <tr>
+												<td></td>
+												<td><img src="valve2.png"></td>
+												
+												<td data-bind="text: name, click: $parent.showBestPrice"></td>
+												<td data-bind=" click: $parent.showBestPrice">24€</td>
+												<td data-bind=" click: $parent.showBestPrice">1</td>
+												<td data-bind=" click: $parent.showBestPrice">spec</td>
+												<td><a data-bind="click: $parent.showBestPrice" class="btn btn-primary" role="button">Add</a> </td>
+											  </tr>
+											  <hr>
+										   </script>
+									</div>
+			</div>							
+			<!-- end of container -->
 	
 	
 	</section>
@@ -283,6 +298,7 @@
                 </div>
 			
 			</div>
+		</div>
 		</div>
 	</section>
 	

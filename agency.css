@@ -328,17 +328,40 @@ section h3.section-subheading {
 }
 
 .card {
-	min-width: 200px;
-	max-width: 200px;
-	margin: 30px;
+	min-width: 15%;
+	max-width: 15%;
+	margin: 20px;
 	float: left;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 2px; 
-	background-color: #ffffff;
-
-	
+	background-color: #fff;
 }
+
+.card:hover  {
+	background-color: #e2e0e0;
+}
+
+
+#catSuppliers {
+	margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  #catSuppliers {
+    display: none;
+  }
+}
+
+.sidebar-menu-collapsed {  
+	display: none;
+}
+.sidebar-menu-expanded {
+    width: auto;
+}
+
+
+
 
 /* Add rounded corners to the top left and the top right corner of the image */
 .card-img {
@@ -346,6 +369,7 @@ section h3.section-subheading {
 	max-width: 50px;
 	display: block;
 	margin: auto;
+	opacity: 0.3;
 }
 
 
