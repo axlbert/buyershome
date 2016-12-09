@@ -329,7 +329,7 @@ section h3.section-subheading {
 
 .card {
 	min-width: 15%;
-	max-width: 15%;
+	max-width: 150px;
 	margin: 20px;
 	float: left;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
