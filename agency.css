@@ -328,8 +328,8 @@ section h3.section-subheading {
 }
 
 .card {
-	min-width: 150px;
-	max-width: 150px;
+	min-width: 180px;
+	max-width: 200px;
 	margin: 20px;
 	float: left;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
@@ -345,6 +345,12 @@ section h3.section-subheading {
 
 #catSuppliers {
 	margin-top: 40px;
+}
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {

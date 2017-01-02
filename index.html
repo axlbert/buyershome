@@ -62,6 +62,7 @@
     </nav>
 
     <!-- Header -->
+
     <header>
         <div class="container" class="bg-light-gray">
             <div class="intro-text">
@@ -87,7 +88,7 @@
 							  <strong><a href="#" class="list-group-item disabled" data-bind="text: currentCategory"></a></strong>
 								<div data-bind="template: {name:'list3', foreach: supplierName  }"></div>
 									<script type="text/html" id="list3">
-										<a href="#" class="list-group-item" data-bind="text: $data "></a>
+										<a href="#main-search" class="list-group-item" data-bind="text: $data "></a>
 									</script>
 								
 							  
@@ -97,7 +98,7 @@
 						</div>
 					
 					</div>
-					<div class="col-md-10">
+					<div class="col-md-8">
 						<div class="container-fluid">
 									<div class="row">
 											
@@ -239,10 +240,11 @@
 										   <div class="card" data-bind="click: $parent.showCategory">
 											  <img  class="card-img" src="valve.png" alt="Avatar" style="width:100%">
 											  <div class="container-card">
-												<h4><b data-bind="text: $data , click: $parent.showCategory"></b></h4> 
-												<p>lorem ipsum</p> 
+												<h4 data-bind="text: $data , click: $parent.showCategory"></h4>
+												<p href="#main-search" >lorem ipsum</p> 
 											  </div>
-											</div>	  
+											</div>
+											
 										</script>
 										  </div>
 										  </div>
@@ -282,6 +284,11 @@
 											  <hr>
 										   </script>
 									</div>
+			
+			
+			<div class="col-md-2" ></div>
+			
+			
 			</div>							
 			<!-- end of container -->
 	
@@ -292,11 +299,36 @@
 	<section id="applications" class="section2 bg-light-gray">
 		<div class="container">
 			<div class="row">
-				    <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Applications </h2>
+				<div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Applications</h2>
                     <h3 class="section-subheading text-muted">Which component fits your application best?</h3>
-                </div>
-			
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 col-centered">
+				<div data-bind="template: {name:'list6', foreach: availableApplications  }"></div>
+										<!--adding a $parent keeps the code from breaking-->
+										<script type="text/html" id="list6">
+										   <div class="card" data-bind="click: $parent.showSolution">
+											  <img  class="card-img" src="drive.png" alt="Avatar" style="width:100%">
+											  <div class="container-card">
+												<h4 data-bind="text: $data , click: $parent.showSolution"></h4>
+												<p href="#main-search" >lorem ipsum</p> 
+											  </div>
+											</div>
+											
+										</script>
+				</div>
+			<div class="col-md-2"></div>
+			</div>
+			<div class="row">
+				<div class="row" data-bind="visible: solutionShown()">
+					<p><strong>87% of Users have investigated these Query Trees:</strong></p>
+					<p>Dimensioning Frequency Converter</p>
+					<p>IP Class Application Finder</p>
+					<p>Best Substitute Finder</p>
+				</div>
 			</div>
 		</div>
 		</div>

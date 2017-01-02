@@ -98,7 +98,11 @@ var ViewModel = function() {
 	self.basket_item = ko.observable("x Solenoid");
     self.categoryList = ko.observableArray(["Valves","Motors","Pumps","Sensors","Pneumatics","Metal","Wood","Logistics","Packaging","Electronics"]);
 	self.supplierName = ko.observableArray([]);
-
+	self.availableApplications = ko.observableArray(["Electric Drive","Pneumatic Actuation","Sensors"]);
+	self.solutionShown = ko.observable();
+	
+	
+	
 	self.expandCATMenu = function () {
 		$("#catSuppliers").removeClass("sidebar-menu-collapsed").addClass("sidebar-menu-expanded");
 		};
@@ -114,7 +118,9 @@ var ViewModel = function() {
 			};
 		};
 	
-	
+	self.showSolution = function () {
+		self.solutionShown(true);
+	};
 	
     self.init_page = function(){
       self.showStartpage(true);
@@ -122,6 +128,7 @@ var ViewModel = function() {
       self.showStartpage2(false);
 	  self.input('');
 	  self.collapseCATMenu();
+	  self.solutionShown(false);
     };
 
     self.init_page();
@@ -157,6 +164,7 @@ var ViewModel = function() {
       self.showStartpage2(false);
 	  self.buildSupplerListRandom();
 	  self.expandCATMenu();
+	  
 	  
     };
   
