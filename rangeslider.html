@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Slider - Range with fixed minimum</title>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="agency.css" rel="stylesheet">
+
+</head>
+<body>
+	<section id="applications" class="section2 bg-light-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Applications</h2>
+                    <h3 class="section-subheading text-muted">Which component fits your application best?</h3>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10 col-centered">
+				<div data-bind="template: {name:'list', foreach: availableApplications  }"></div>
+										<!--adding a $parent keeps the code from breaking-->
+										<script type="text/html" id="list">
+										   <div class="card" data-bind="click: $parent.showChoices">
+											  <img  class="card-img" src="drive.png" alt="Avatar" style="width:100%">
+											  <div class="container-card">
+												<h4 data-bind="text: $data , click: $parent.showChoices"></h4>
+												<p href="#main-search" >lorem ipsum</p> 
+											  </div>
+											</div>
+											
+										</script>
+				</div>
+			<div class="col-md-1"></div>
+			</div>
+
+		</div>
+		</div>
+	</section>
+	<div class="row" data-bind="visible: towMachselect()">
+		<div class="col-md-12 col-centered" id="finalizer">
+			 <button type="button" class="btn btn-lg btn-default"><a href="#calendarPick">T dazu</a></button>
+			 <button type="button" class="btn btn-lg btn-default"><a href="#calendarPick">Eigener T</a></button>
+		
+		</div>
+	</div>
+	<div class="row" data-bind="visible: specselect()">
+		<div class="col-md-1"></div>
+		<div class="col-md-5">
+		<p>
+		  <label for="amount">Fläche in ha:</label>
+		  <input type="text" id="amount" readonly style="border:0; color:#b30202; font-weight:bold;">
+		</p>
+		 
+		<div id="slider-range-min"></div>
+
+		<div id="box-sizing">
+		<canvas id="myCanvas" width="500" height="500"></canvas>
+		</div>
+		</div>
+        <div class="col-md-5">
+		<p>
+		  <label for="amount2">Row width in cm:</label>
+		  <input type="text" id="amount2" readonly style="border:0; color:#b30202; font-weight:bold;">
+		</p>
+		 
+		<div id="slider-range-min2"></div>
+
+		<div id="box-sizing2">
+		<canvas id="myCanvas2" width="500" height="500"></canvas>
+		</div>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<section id="calendarPick" class="section2 bg-light-gray" data-bind="visible: dateSelect()">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Schedule Now</h2>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-4 "><div id="datepicker"></div>
+				<br>
+				<button type="button" class="btn btn-default"><a href="">Bestpreis Suche</a></button>
+				
+				</div>
+				<div class="col-md-4 ">
+					<table class="table">
+							<tbody>
+								<tr><td><b>Auswahl</b></td><td><input type="text" id="alternate" size="30"></td></tr>
+								<tr><td><b>Nachfrage</b></td><td><strong data-bind="text: pricing_level"></strong></tr>
+								<tr><td><b>Tage</b></td><td><strong data-bind="text: size_field"></strong></tr>
+								<tr><td><h3>€</h3></td><td><h3 data-bind="text: total_price"></h3></tr>
+							</tbody>
+					</table>
+				</div>
+			<div class="col-md-2"> </div>
+			<div class="col-md-12" style="text-align: center"><br><br><button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#myModal" >Book Now</button></div>
+			</div>
+
+		</div>
+		</div>
+	</section>
+	
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Einloggen</h4>
+      </div>
+      <div class="modal-body">
+
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">Name</span>
+					<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+				</div>
+				<br>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">Passwort</span>
+					<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+				</div>
+			  
+	  </div>
+	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Einloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="scriptFN.js"></script>
+
+	
+	
+ 
+ 
+</body>
+</html>

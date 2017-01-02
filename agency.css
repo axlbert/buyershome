@@ -348,6 +348,13 @@ section h3.section-subheading {
 }
 
 
+#finalizer {
+	padding: 10px;
+	margin: auto;
+	text-align: center;
+	background-color: black;
+}
+
 .col-centered{
     float: none;
     margin: 0 auto;
